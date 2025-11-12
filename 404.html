@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="3; url=/Furniture.html" />
+  <meta http-equiv="refresh" content="3; url=Furniture.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found</title>
   <style>
@@ -11,29 +11,46 @@
       color: #ffffff;
       font-family: Arial, sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      flex-direction: column;
       text-align: center;
+      margin: 0;
     }
-    h1 { font-size: 3em; margin-bottom: 0.3em; }
-    p { color: #aaa; font-size: 1.1em; }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+    }
+    p {
+      color: #ccc;
+      font-size: 1.2em;
+      margin-bottom: 1em;
+    }
     a {
       color: #7c5cff;
       text-decoration: none;
       border: 1px solid #7c5cff;
       padding: 8px 16px;
       border-radius: 8px;
-      margin-top: 1em;
-      display: inline-block;
+      transition: 0.3s;
     }
-    a:hover { background: #7c5cff; color: #fff; }
+    a:hover {
+      background: #7c5cff;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
   <h1>404 — Page Not Found</h1>
-  <p>Redirecting you to the homepage in 3 seconds...</p>
-  <a href="/">Go to Homepage Now</a>
+  <p>Redirecting you to <strong>Furniture.html</strong> in 3 seconds...</p>
+  <a href="Furniture.html">Go there now</a>
+
+  <script>
+    // If meta refresh fails, fallback using JavaScript
+    setTimeout(function() {
+      window.location.href = "Furniture.html";
+    }, 3000);
+  </script>
 </body>
 </html>
