@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Equbal Furnitures // Products</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+      body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: white;
+            color: black;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: #555;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .action {
+            position: relative;
+            left: 100px;
+        }
+        .product-container {
+            display: flex;
+            margin: 50px 100px;
+            gap: 50px;
+        }
+        .product-image {
+            position: relative;
+            flex: 1;
+        }
+        .product-description {
+            flex: 1;
+            padding: 20px;
+        }
+        .item {
+            position: relative;
+            display: inline-block;
+            left: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .item:hover img {
+            filter: brightness(0.7);
+            transform: scale(1.05);
+        }
+        .price-overlay {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .action {
+            margin-top: 25px;
+        }
+        .action h1 {
+            margin: 15px 0;
+            font-size: 1.8rem;
+            color: #333;
+            font-weight: 600;
+        }
+        .product-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .product-price {
+            font-size: 1.5rem;
+            color: #e63946;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .product-details {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .product-features {
+            margin-bottom: 30px;
+        }
+        .product-features li {
+            margin-bottom: 10px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        .product-features li:before {
+            content: "✓";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+        
+        footer {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem;
+        }
+        footer a {
+            color: black;
+            text-decoration: none;
+            margin: 0.5rem;
+            display: inline-block;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        footer .social-icons {
+            margin: 1rem 0;
+        }
+        footer .social-icons i {
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        footer p {
+            margin: 0.5rem;
+        }
+        .navbar a:hover{
+            font-size: 25px;
+            transition: 1.5s;
+            border-radius: 10%;
+        }
+        .actions {
+            position: relative;
+            left: 100px;
+        }
+        .products {
+            position: relative;
+            display: inline-block;
+            padding: 15px;
+            width: 420px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .items {
+            position: relative;
+            left: 100px;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 400px;
+            height: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .items:hover {
+            transform: scale(1.05);
+        }
+        .items img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .modal-content {
+            border-radius: 15px;
+        }
+        .modal-header {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .modal-title {
+            font-weight: 700;
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .btn-pay {
+            background-color: #4CAF50;
+            color: white;
+            font-weight: 600;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .btn-pay:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Equbal Furniture</h1>
+            <p>Your One-Stop Shop for Elegant Furniture</p>
+        </div>
+        <div class="navbar">
+            <a href="Furniture.html" style="color: black; text-decoration: none; margin-right: 1rem;">Home</a>
+            <a href="products.html" style="color: black; text-decoration: none; margin-right: 1rem; "><b> Products</b></a>
+            <a href="#aboutus" style="color: black; text-decoration: none; margin-right: 1rem;">About</a>
+            <a href="#Contact" style="color: black; text-decoration: none; margin-right: 1rem;">Contact</a>
+            <a href="#basket" style="color: black; text-decoration: none;">🛒 Basket</a>
+        </div>
+    </header>
+    
+    
+    <!-- Product Container -->
+    <div class="product-container">
+        <!-- Product Image -->
+        <div class="product-image">
+            <div class="item">
+                <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                <div class="price-overlay">19999/-</div>
+            </div>
+        </div>
+        
+        <!-- Product Description -->
+        <div class="product-description">
+            <h2 class="product-title"> Luxury Bed Frame</h2>
+            <div class="product-price">19999/-</div>
+            <div class="product-details">
+                <p>Elevate your space with this exquisitely crafted furniture piece, designed to blend form and function effortlessly. Whether you’re refreshing a room or completing a new home, this piece delivers lasting beauty, comfort, and practicality for everyday living.</p>
+            </div>
+            <ul class="product-features">
+                <li> Premium Build: Constructed with high-quality materials for durability and everyday use.</li>
+                <li> Versatile Aesthetic: A neutral, sophisticated design complements any decor style—modern, traditional, or eclectic.</li>
+                <li>Thoughtful Details: Features ergonomic proportions, smooth finishes, and intuitive design for maximum usability.</li>
+                <li>Easy to Maintain: Designed for hassle-free care with stain-resistant, scratch-proof, or easy-clean surfaces.</li>
+                
+            </ul>
+            <!-- <button class="add-to-cart">Add to Cart</button> -->
+        </div>
+    </div>
+    <div class="hero">
+        <h2>Choose Your payment method</h2>
+    </div>
+    
+    <div class="payment-methods">
+        <!-- UPI Payment -->
+        <div class="products" data-bs-toggle="modal" data-bs-target="#upiModal">
+            <div class="items">
+                <img src="https://www.uxdt.nic.in/wp-content/uploads/2020/06/Preview.png?x76268" alt="UPI">
+            </div>
+            <div class="actions">
+                <h1>UPI</h1>
+            </div>
+        </div>
+
+        <!-- Net Banking -->
+        <div class="products" data-bs-toggle="modal" data-bs-target="#netBankingModal">
+            <div class="items">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-netbanking-icon-download-in-svg-png-gif-file-formats--credit-debit-card-bank-payment-methods-vol-2-pack-business-icons-32304.png" alt="Net Banking">
+            </div>
+            <div class="actions">
+                <h1>NET BANKING</h1>
+            </div>
+        </div>
+
+        <!-- Debit Card -->
+        <div class="products" data-bs-toggle="modal" data-bs-target="#debitCardModal">
+            <div class="items">
+                <img src="https://etimg.etb2bimg.com/photo/107570797.cms" alt="Debit Card">
+            </div>
+            <div class="actions">
+                <h1>DEBIT CARD</h1>
+            </div>
+        </div>
+
+        <!-- Credit Card -->
+        <div class="products" data-bs-toggle="modal" data-bs-target="#creditCardModal">
+            <div class="items">
+                <img src="https://icm.aexp-static.com/Internet/internationalcardshop/en_gb/images/cards/UK_AXP_The_Gold_Business_Card.png" alt="Credit Card">
+            </div>
+            <div class="actions">
+                <h1>CREDIT CARD</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- UPI Modal -->
+    <div class="modal fade" id="upiModal" tabindex="-1" aria-labelledby="upiModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="upiModalLabel">Pay via UPI</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="upiId" class="form-label">UPI ID</label>
+                            <input type="text" class="form-control" id="upiId" placeholder="yourname@upi">
+                        </div>
+                        <div class="mb-3">
+                            <label for="upiMobile" class="form-label">Mobile Number</label>
+                            <input type="tel" class="form-control" id="upiMobile" placeholder="9876543210">
+                        </div>
+                        <button type="submit" class="btn btn-pay">Pay ₹5599</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Net Banking Modal -->
+    <div class="modal fade" id="netBankingModal" tabindex="-1" aria-labelledby="netBankingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="netBankingModalLabel">Net Banking</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="bankSelect" class="form-label">Select Bank</label>
+                            <select class="form-select" id="bankSelect">
+                                <option selected>Choose your bank</option>
+                                <option>State Bank of India</option>
+                                <option>HDFC Bank</option>
+                                <option>ICICI Bank</option>
+                                <option>Axis Bank</option>
+                                <option>Punjab National Bank</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="netBankingMobile" class="form-label">Registered Mobile Number</label>
+                            <input type="tel" class="form-control" id="netBankingMobile" placeholder="9876543210">
+                        </div>
+                        <button type="submit" class="btn btn-pay">Pay ₹5599</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Debit Card Modal -->
+    <div class="modal fade" id="debitCardModal" tabindex="-1" aria-labelledby="debitCardModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="debitCardModalLabel">Debit Card Payment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="cardNumber" class="form-label">Card Number</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="expiryDate" class="form-label">Expiry Date</label>
+                                <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="cvv" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cvv" placeholder="123">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cardName" class="form-label">Name on Card</label>
+                            <input type="text" class="form-control" id="cardName" placeholder="John Doe">
+                        </div>
+                        <button type="submit" class="btn btn-pay">Pay ₹5599</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credit Card Modal -->
+    <div class="modal fade" id="creditCardModal" tabindex="-1" aria-labelledby="creditCardModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="creditCardModalLabel">Credit Card Payment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="creditCardNumber" class="form-label">Card Number</label>
+                            <input type="text" class="form-control" id="creditCardNumber" placeholder="1234 5678 9012 3456">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="creditExpiryDate" class="form-label">Expiry Date</label>
+                                <input type="text" class="form-control" id="creditExpiryDate" placeholder="MM/YY">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="creditCvv" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="creditCvv" placeholder="123">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="creditCardName" class="form-label">Name on Card</label>
+                            <input type="text" class="form-control" id="creditCardName" placeholder="John Doe">
+                        </div>
+                        <button type="submit" class="btn btn-pay">Pay ₹5599</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background-color: white; margin-top: 4rem; font-size: 1rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background-color: #eaeaea;">
+        <center>
+            <a href="#top" style="display: block; margin-bottom: 1rem; text-decoration: none; color: black;">⬆ Top</a>
+            <a href="#" style="text-decoration: none; color: black;">FAQ</a><br>
+            <a href="#" style="text-decoration: none; color: black;">Shipping and Returns</a><br>
+            <a href="#" style="text-decoration: none; color: black;">Terms and Conditions</a>
+            <div class="social-icons">
+                <a href="#" style="text-decoration: none; color: black; font-size: 1.5rem; padding: 10px;"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" style="text-decoration: none; color: black; font-size: 1.5rem; padding: 10px;"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#" style="text-decoration: none; color: black; font-size: 1.5rem; padding: 10px;"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <p style="color: black;">&copy; 2025 by Equbal Furnitures Designers</p>
+        </center>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        // You can add additional JavaScript here if needed
+        document.querySelectorAll('.products').forEach(product => {
+            product.addEventListener('click', function() {
+                // You can add specific actions for each payment method if needed
+                console.log('Payment method selected:', this.querySelector('h1').textContent);
+            });
+        });
+    </script>
+</body>
+</html>

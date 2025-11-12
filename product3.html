@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Equbal Furnitures // Products</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            /* background-color: #f9f9f9; */
+        }
+        header {
+            background-color: white;
+            color: black;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            background-color: #555;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+        }
+     .action {
+        position: relative;
+        left: 100px;
+
+     }
+     .product-container {
+        display: flex;
+        margin: 50px 100px;
+        gap: 50px;
+     }
+     
+     .product-image {
+        position: relative;
+        flex: 1;
+     }
+     
+     .product-description {
+        flex: 1;
+        padding: 20px;
+     }
+        
+        .item {
+            position: relative;
+            display: inline-block;
+            left: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 450px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .item:hover img {
+            filter: brightness(0.7);
+            transform: scale(1.05);
+        }
+        
+        .price-overlay {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .action {
+            margin-top: 25px;
+        }
+        
+        .action h1 {
+            margin: 15px 0;
+            font-size: 1.8rem;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .product-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .product-price {
+            font-size: 1.5rem;
+            color: #e63946;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .product-details {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .product-features {
+            margin-bottom: 30px;
+        }
+        
+        .product-features li {
+            margin-bottom: 10px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .product-features li:before {
+            content: "✓";
+            color: #4CAF50;
+            position: absolute;
+            left: 0;
+        }
+        
+        .add-to-cart {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #555;
+        }
+
+        footer {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 4rem; /* Added space between about and footer */
+        }
+        footer a {
+            color: black;
+            text-decoration: none;
+            margin: 0.5rem;
+            display: inline-block;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        footer .social-icons {
+            margin: 1rem 0;
+        }
+        footer .social-icons i {
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+        }
+        footer p {
+            margin: 0.5rem;
+        }
+        .navbar a:hover{
+            font-size: 25px;
+            transition: 1.5s;
+            border-radius: 10%;
+        }
+        .actions {
+        position: relative;
+        left: 100px;
+
+     }
+     .products {
+            position: relative;
+            display: inline-block;
+            padding: 15px;
+            width: 420px;
+            /* margin: 50px; */
+            text-align: center;
+        }
+        
+        .items {
+            position: relative;
+            /* display: inline-block; */
+            left: 100px;
+            overflow: hidden;
+            border-radius: 50%;
+            width: 400px;
+            height: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .items img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .items:hover img {
+            filter: brightness(0.7);
+            transform: scale(1.05);
+        }        
+        .actions {
+            margin-top: 25px;
+        }
+        
+        .actions h1 {
+            margin: 15px 0;
+            font-size: 1.8rem;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Equbal Furniture</h1>
+            <p>Your One-Stop Shop for Elegant Furniture</p>
+        </div>
+        <div class="navbar">
+            <a href="Furniture.html" style="color: black; text-decoration: none; margin-right: 1rem;">Home</a>
+            <a href="products.html" style="color: black; text-decoration: none; margin-right: 1rem; "><b> Products</b></a>
+            <a href="#aboutus" style="color: black; text-decoration: none; margin-right: 1rem;">About</a>
+            <a href="#Contact" style="color: black; text-decoration: none; margin-right: 1rem;">Contact</a>
+            <a href="#basket" style="color: black; text-decoration: none;">🛒 Basket</a>
+        </div>
+    </header>
+    
+    
+    <!-- Product Container -->
+    <div class="product-container">
+        <!-- Product Image -->
+        <div class="product-image">
+            <div class="item">
+                <img src="https://plus.unsplash.com/premium_photo-1681980019667-96baeb36fc33?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bed">
+                <div class="price-overlay">4499/-</div>
+            </div>
+        </div>
+        
+        <!-- Product Description -->
+        <div class="product-description">
+            <h2 class="product-title">Desk Chair</h2>
+            <div class="product-price">4499/-</div>
+            <div class="product-details">
+                <p>Elevate your space with this exquisitely crafted furniture piece, designed to blend form and function effortlessly. Whether you’re refreshing a room or completing a new home, this piece delivers lasting beauty, comfort, and practicality for everyday living.</p>
+            </div>
+            <ul class="product-features">
+                <li> Premium Build: Constructed with high-quality materials for durability and everyday use.</li>
+                <li> Versatile Aesthetic: A neutral, sophisticated design complements any decor style—modern, traditional, or eclectic.</li>
+                <li>Thoughtful Details: Features ergonomic proportions, smooth finishes, and intuitive design for maximum usability.</li>
+                <li>Easy to Maintain: Designed for hassle-free care with stain-resistant, scratch-proof, or easy-clean surfaces.</li>
+                
+            </ul>
+            <!-- <button class="add-to-cart">Add to Cart</button> -->
+        </div>
+    </div>
+    <div class="hero">
+        <h2>Choose Your payment method</h2>
+    </div>
+    <div class="payment">
+        <div class="products">
+            <div class="items">
+                <img src="https://www.uxdt.nic.in/wp-content/uploads/2020/06/Preview.png?x76268" alt="">
+
+            </div>
+            <div class="actions">
+                <h1>UPI</h1>
+            </div>
+        </div>
+
+        <div class="products">
+            <div class="items">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-netbanking-icon-download-in-svg-png-gif-file-formats--credit-debit-card-bank-payment-methods-vol-2-pack-business-icons-32304.png" alt="">
+
+            </div>
+            <div class="actions">
+                <h1>NET BANKING</h1>
+            </div>
+        </div>
+
+        <div class="products">
+            <div class="items">
+                <img src="https://etimg.etb2bimg.com/photo/107570797.cms" alt="">
+
+            </div>
+            <div class="actions">
+                <h1>DEBIT CARD</h1>
+            </div>
+        </div>
+
+        <div class="products">
+            <div class="items">
+                <img src="https://icm.aexp-static.com/Internet/internationalcardshop/en_gb/images/cards/UK_AXP_The_Gold_Business_Card.png" alt="">
+
+            </div>
+            <div class="actions">
+                <h1>CREDIT CARD</h1>
+            </div>
+        </div>
+</div>
+
+<footer style="background-color: white; margin-top: 4rem; font-size: 1rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background-color: #eaeaea;">
+    <center>
+        <a href="#top" style="display: block; margin-bottom: 1rem; text-decoration: none; color: black;">⬆ Top</a>
+        <a href="#" style="text-decoration: none; color: black;">FAQ</a><br>
+        <a href="#" style="text-decoration: none; color: black;">Shipping and Returns</a><br>
+        <a href="#" style="text-decoration: none; color: black;">Terms and Conditions</a>
+        <div class="social-icons">
+            <a href="#" style="text-decoration: none; color: black; font-size: 1.5rem; padding: 10px;"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" style="text-decoration: none; color: black; font-size: 1.5rem; padding: 10px;"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#" style="text-decoration: none; color: black; font-size: 1.5rem; padding: 10px;"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p style="color: black;">&copy; 2025 by Equbal Furnitures Designers</p>
+    </center>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
